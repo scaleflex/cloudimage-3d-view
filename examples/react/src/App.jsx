@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { CI3DViewer } from 'js-cloudimage-3d-view/react';
+import { CI3DViewer } from '@cloudimage/3d-view/react';
 
 export function App() {
   const viewerRef = useRef(null);

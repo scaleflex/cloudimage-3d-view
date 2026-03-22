@@ -29,7 +29,7 @@ export default defineConfig({
         'react',
         'react-dom',
         'react/jsx-runtime',
-        /^js-cloudimage-3d-view/,
+        /^@cloudimage\/3d-view/,
       ],
     },
     sourcemap: true,

@@ -1,6 +1,6 @@
 # Code Review Issues
 
-Deep code review of the `js-cloudimage-3d-view` codebase. Issues organized by severity.
+Deep code review of the `@cloudimage/3d-view` codebase. Issues organized by severity.
 
 ---
 

@@ -16,7 +16,7 @@ export default defineConfig({
       output: [
         {
           format: 'umd',
-          entryFileNames: 'js-cloudimage-3d-view.standalone.min.js',
+          entryFileNames: '3d-view.standalone.min.js',
           inlineDynamicImports: true,
           name: 'CI3DView',
           exports: 'named',

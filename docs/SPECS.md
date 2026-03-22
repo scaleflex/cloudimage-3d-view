@@ -1,4 +1,4 @@
-# js-cloudimage-3d-view — Specification
+# @cloudimage/3d-view — Specification
 
 > Interactive 3D model viewer with orbit controls, lighting, and accessibility.
 
@@ -29,7 +29,7 @@
 
 ### What
 
-`js-cloudimage-3d-view` is an open-source JavaScript library for embedding interactive 3D model viewers into web pages. It provides a turnkey solution for displaying GLB/glTF and OBJ models with orbit controls, configurable lighting, environment maps, shadows, and a polished loading experience — all built on Three.js.
+`@cloudimage/3d-view` is an open-source JavaScript library for embedding interactive 3D model viewers into web pages. It provides a turnkey solution for displaying GLB/glTF and OBJ models with orbit controls, configurable lighting, environment maps, shadows, and a polished loading experience — all built on Three.js.
 
 ### Why
 
@@ -44,7 +44,7 @@ The existing ecosystem for lightweight 3D model viewers has significant gaps:
 
 ### Positioning
 
-`js-cloudimage-3d-view` fills these gaps by providing:
+`@cloudimage/3d-view` fills these gaps by providing:
 
 - A **Three.js-powered**, TypeScript-first library with full access to the underlying scene
 - **GLB/glTF + OBJ+MTL** format support out of the box, with an extensible loader architecture
@@ -362,7 +362,7 @@ interface CI3DViewInstance {
 **Usage example:**
 
 ```js
-import CI3DView from 'js-cloudimage-3d-view';
+import CI3DView from '@cloudimage/3d-view';
 
 const viewer = new CI3DView('#product-viewer', {
   src: 'https://example.com/models/sneaker.glb',
@@ -409,7 +409,7 @@ All configuration is expressed via `data-ci-3d-*` attributes on the container el
 
 ```html
 <script src="https://unpkg.com/three@0.170.0/build/three.min.js"></script>
-<script src="https://scaleflex.cloudimg.io/v7/plugins/js-cloudimage-3d-view/1.2.0/js-cloudimage-3d-view.min.js?vh=dd042c&func=proxy"></script>
+<script src="https://scaleflex.cloudimg.io/v7/plugins/cloudimage/3d-view/1.2.0/3d-view.min.js?vh=b234c0&func=proxy"></script>
 <script>CI3DView.autoInit();</script>
 ```
 
@@ -904,7 +904,7 @@ When `shadows: true` (default), a transparent ground plane is placed beneath the
 ### 8.1 Entry Point
 
 ```ts
-import { CI3DViewer, useCI3DView } from 'js-cloudimage-3d-view/react';
+import { CI3DViewer, useCI3DView } from '@cloudimage/3d-view/react';
 ```
 
 The React wrapper is a **separate entry point** to avoid bundling React for vanilla JS consumers. React is an **optional peer dependency**.
@@ -967,7 +967,7 @@ interface CI3DViewerProps {
 **Usage example:**
 
 ```tsx
-import { CI3DViewer } from 'js-cloudimage-3d-view/react';
+import { CI3DViewer } from '@cloudimage/3d-view/react';
 
 function ProductViewer() {
   return (
@@ -991,7 +991,7 @@ function ProductViewer() {
 Provides direct access to the vanilla `CI3DViewInstance` for imperative control:
 
 ```tsx
-import { useCI3DView } from 'js-cloudimage-3d-view/react';
+import { useCI3DView } from '@cloudimage/3d-view/react';
 
 function ProductViewer() {
   const { containerRef, instance } = useCI3DView({
@@ -1017,7 +1017,7 @@ The `<CI3DViewer>` component forwards a ref exposing instance methods:
 
 ```tsx
 import { useRef } from 'react';
-import { CI3DViewer, CI3DViewerRef } from 'js-cloudimage-3d-view/react';
+import { CI3DViewer, CI3DViewerRef } from '@cloudimage/3d-view/react';
 
 function ProductViewer() {
   const viewerRef = useRef<CI3DViewerRef>(null);
@@ -1163,9 +1163,9 @@ When `prefers-reduced-motion: reduce` is active:
 
 | Format | File | Use Case |
 |---|---|---|
-| **ESM** | `dist/js-cloudimage-3d-view.esm.js` | Modern bundlers (Webpack, Vite, Rollup) |
-| **CJS** | `dist/js-cloudimage-3d-view.cjs.js` | Node.js, legacy bundlers |
-| **UMD** | `dist/js-cloudimage-3d-view.min.js` | CDN `<script>` tag, exposes `window.CI3DView` |
+| **ESM** | `dist/@cloudimage/3d-view.esm.js` | Modern bundlers (Webpack, Vite, Rollup) |
+| **CJS** | `dist/@cloudimage/3d-view.cjs.js` | Node.js, legacy bundlers |
+| **UMD** | `dist/@cloudimage/3d-view.min.js` | CDN `<script>` tag, exposes `window.CI3DView` |
 | **TypeScript** | `dist/index.d.ts` | Type definitions |
 | **React ESM** | `dist/react/index.js` | React wrapper (ESM) |
 | **React CJS** | `dist/react/index.cjs` | React wrapper (CJS) |
@@ -1175,20 +1175,20 @@ When `prefers-reduced-motion: reduce` is active:
 
 ```json
 {
-  "name": "js-cloudimage-3d-view",
+  "name": "@cloudimage/3d-view",
   "version": "1.0.0",
   "description": "Interactive 3D model viewer with orbit controls, lighting, and accessibility",
   "license": "MIT",
   "author": "Scaleflex",
-  "main": "dist/js-cloudimage-3d-view.cjs.js",
-  "module": "dist/js-cloudimage-3d-view.esm.js",
-  "unpkg": "dist/js-cloudimage-3d-view.min.js",
+  "main": "dist/@cloudimage/3d-view.cjs.js",
+  "module": "dist/@cloudimage/3d-view.esm.js",
+  "unpkg": "dist/@cloudimage/3d-view.min.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/js-cloudimage-3d-view.esm.js",
-      "require": "./dist/js-cloudimage-3d-view.cjs.js"
+      "import": "./dist/@cloudimage/3d-view.esm.js",
+      "require": "./dist/@cloudimage/3d-view.cjs.js"
     },
     "./react": {
       "types": "./dist/react/index.d.ts",
@@ -1247,8 +1247,8 @@ For CDN consumers, both Three.js and the library must be loaded:
 <!-- Three.js (peer dependency) -->
 <script src="https://unpkg.com/three@0.170.0/build/three.min.js"></script>
 
-<!-- js-cloudimage-3d-view -->
-<script src="https://scaleflex.cloudimg.io/v7/plugins/js-cloudimage-3d-view/1.2.0/js-cloudimage-3d-view.min.js?vh=dd042c&func=proxy"></script>
+<!-- @cloudimage/3d-view -->
+<script src="https://scaleflex.cloudimg.io/v7/plugins/cloudimage/3d-view/1.2.0/3d-view.min.js?vh=b234c0&func=proxy"></script>
 ```
 
 The UMD build references `three` as an external global (`window.THREE`). When loaded via `<script>` tags in the correct order, `window.CI3DView` is available for initialization.
@@ -1257,7 +1257,7 @@ The UMD build references `three` as an external global (`window.THREE`). When lo
 
 Three.js is **not bundled** into the library. It is declared as a `peerDependency` (`>=0.150.0`):
 
-- **Bundler consumers:** `npm install three js-cloudimage-3d-view` — the bundler handles deduplication
+- **Bundler consumers:** `npm install three @cloudimage/3d-view` — the bundler handles deduplication
 - **CDN consumers:** Load Three.js via a `<script>` tag before the library
 - **Why external:** Three.js is ~150 KB gzipped. Bundling it would make the library unusably large. Externalizing it also allows consumers to share a single Three.js instance across multiple libraries.
 
@@ -1268,7 +1268,7 @@ Three.js addons (`OrbitControls`, `GLTFLoader`, `OBJLoader`, `MTLLoader`, `DRACO
 ## 11. Project Structure
 
 ```
-js-cloudimage-3d-view/
+@cloudimage/3d-view/
 ├── src/
 │   ├── index.ts                    # Main entry — CI3DView class + autoInit
 │   ├── core/
@@ -1357,8 +1357,8 @@ js-cloudimage-3d-view/
 │   ├── vite.react.config.ts        # React wrapper build config
 │   └── vite.demo.config.ts         # Demo build config
 ├── dist/                           # Built output
-│   ├── js-cloudimage-3d-view.min.js
-│   └── js-cloudimage-3d-view.min.js.map
+│   ├── @cloudimage/3d-view.min.js
+│   └── @cloudimage/3d-view.min.js.map
 ├── .github/
 │   └── workflows/
 │       ├── deploy-demo.yml         # GitHub Pages deployment workflow
@@ -1380,7 +1380,7 @@ js-cloudimage-3d-view/
 
 ## 12. GitHub Pages Demo
 
-The demo site is hosted at `https://scaleflex.github.io/js-cloudimage-3d-view/` and deployed via GitHub Actions.
+The demo site is hosted at `https://scaleflex.github.io/@cloudimage/3d-view/` and deployed via GitHub Actions.
 
 ### 12.1 Demo Sections
 
@@ -1418,7 +1418,7 @@ Demo models are royalty-free 3D models in GLB format:
 - **Furniture piece** — format support section (GLB + OBJ versions)
 - **HDR studio environment** — lighting demo
 
-All demo assets are served via `https://scaleflex.cloudimg.io/v7/plugins/js-cloudimage-3d-view/` or from public model repositories.
+All demo assets are served via `https://scaleflex.cloudimg.io/v7/plugins/@cloudimage/3d-view/` or from public model repositories.
 
 ---
 
@@ -1498,7 +1498,7 @@ The `destroy()` method performs complete cleanup to prevent memory leaks:
 
 ## 14. Competitor Feature Matrix
 
-| Feature | js-cloudimage-3d-view | `<model-viewer>` | Three.js (raw) | react-three-fiber | Babylon.js Viewer | Sketchfab Embed |
+| Feature | @cloudimage/3d-view | `<model-viewer>` | Three.js (raw) | react-three-fiber | Babylon.js Viewer | Sketchfab Embed |
 |---|---|---|---|---|---|---|
 | **TypeScript** | Yes (first-class) | Yes | Yes (types available) | Yes | Yes | No (iframe) |
 | **Framework** | Vanilla + React | Web Component | Vanilla | React only | Vanilla | iframe |

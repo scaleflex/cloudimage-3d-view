@@ -1,5 +1,5 @@
 {
-  "name": "js-cloudimage-3d-view-vanilla-example",
+  "name": "@cloudimage/3d-view-vanilla-example",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "js-cloudimage-3d-view": "^1.0.0",
+    "@cloudimage/3d-view": "^1.0.0",
     "three": "^0.170.0"
   },
   "devDependencies": {

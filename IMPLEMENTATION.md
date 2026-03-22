@@ -1,8 +1,8 @@
-# Implementation Plan: js-cloudimage-3d-view
+# Implementation Plan: @cloudimage/3d-view
 
 ## Summary
 
-Build `js-cloudimage-3d-view` from scratch — a Three.js-powered TypeScript library for interactive 3D model viewers with orbit controls, lighting, environment maps, shadows, animation playback, and WCAG 2.1 AA accessibility. Ten implementation phases, following the same build system pattern as `js-cloudimage-hotspot`.
+Build `@cloudimage/3d-view` from scratch — a Three.js-powered TypeScript library for interactive 3D model viewers with orbit controls, lighting, environment maps, shadows, animation playback, and WCAG 2.1 AA accessibility. Ten implementation phases, following the same build system pattern as `js-cloudimage-hotspot`.
 
 ## Target Metrics
 
@@ -720,8 +720,8 @@ useImperativeHandle(ref, () => ({
 | `demo/react-demo/index.html` | Created | React demo entry |
 | `demo/react-demo/main.tsx` | Created | React demo mount |
 | `demo/react-demo/app.tsx` | Created | React demo showcasing `<CI3DViewer>` component, `useCI3DView` hook, ref API |
-| `examples/vanilla/` | Created | CodeSandbox example: index.html, index.js (imports CI3DView, creates viewer), package.json (deps: three, js-cloudimage-3d-view, vite), vite.config.js, sandbox.config.json |
-| `examples/react/` | Created | React CodeSandbox example: index.html, src/App.jsx, src/index.jsx, package.json (deps: three, js-cloudimage-3d-view, react, vite), vite.config.js, sandbox.config.json |
+| `examples/vanilla/` | Created | CodeSandbox example: index.html, index.js (imports CI3DView, creates viewer), package.json (deps: three, @cloudimage/3d-view, vite), vite.config.js, sandbox.config.json |
+| `examples/react/` | Created | React CodeSandbox example: index.html, src/App.jsx, src/index.jsx, package.json (deps: three, @cloudimage/3d-view, react, vite), vite.config.js, sandbox.config.json |
 | `README.md` | Created | Badges, features, installation (npm + CDN with Three.js), quick start, full API reference, React usage, theming, accessibility, TypeScript, browser support |
 | `LICENSE` | Created | MIT license, Scaleflex copyright |
 | `CHANGELOG.md` | Created | v1.0.0 changelog |

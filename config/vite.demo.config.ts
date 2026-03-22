@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import { cpSync } from 'fs';
 
 export default defineConfig({
-  base: '/js-cloudimage-3d-view/',
+  base: '/cloudimage-3d-view/',
   root: resolve(__dirname, '../demo'),
   build: {
     outDir: resolve(__dirname, '../dist-demo'),

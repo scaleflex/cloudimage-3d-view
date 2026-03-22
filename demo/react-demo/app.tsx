@@ -9,7 +9,7 @@ export function App() {
 
   return (
     <div>
-      <h1>React Demo — js-cloudimage-3d-view</h1>
+      <h1>React Demo — @cloudimage/3d-view</h1>
 
       <div style={{ marginBottom: 16, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         <button onClick={() => {

@@ -1,4 +1,4 @@
-import { CI3DView } from 'js-cloudimage-3d-view';
+import { CI3DView } from '@cloudimage/3d-view';
 
 const viewer = new CI3DView('#viewer', {
   src: 'https://fbmjmuoeb.filerobot.com/3D%20Models/colored.stl?vh=0975df&func=proxy',

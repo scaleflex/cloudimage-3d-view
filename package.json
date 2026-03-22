@@ -1,18 +1,18 @@
 {
-  "name": "js-cloudimage-3d-view",
+  "name": "@cloudimage/3d-view",
   "version": "1.2.0",
   "description": "Interactive 3D model viewer with orbit controls, lighting, and accessibility",
   "license": "MIT",
   "author": "Scaleflex",
-  "main": "dist/js-cloudimage-3d-view.cjs.js",
-  "module": "dist/js-cloudimage-3d-view.esm.js",
-  "unpkg": "dist/js-cloudimage-3d-view.min.js",
+  "main": "dist/3d-view.cjs.js",
+  "module": "dist/3d-view.esm.js",
+  "unpkg": "dist/3d-view.min.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/js-cloudimage-3d-view.esm.js",
-      "require": "./dist/js-cloudimage-3d-view.cjs.js"
+      "import": "./dist/3d-view.esm.js",
+      "require": "./dist/3d-view.cjs.js"
     },
     "./react": {
       "types": "./dist/react/index.d.ts",
@@ -93,10 +93,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/scaleflex/js-cloudimage-3d-view.git"
+    "url": "https://github.com/scaleflex/cloudimage-3d-view.git"
   },
   "bugs": {
-    "url": "https://github.com/scaleflex/js-cloudimage-3d-view/issues"
+    "url": "https://github.com/scaleflex/cloudimage-3d-view/issues"
   },
-  "homepage": "https://scaleflex.github.io/js-cloudimage-3d-view/"
+  "homepage": "https://github.com/scaleflex/cloudimage-3d-view"
 }

@@ -20,19 +20,19 @@ export default defineConfig({
       output: [
         {
           format: 'es',
-          entryFileNames: 'js-cloudimage-3d-view.esm.js',
+          entryFileNames: '3d-view.esm.js',
           chunkFileNames: 'chunks/[name].js',
           exports: 'named',
         },
         {
           format: 'cjs',
-          entryFileNames: 'js-cloudimage-3d-view.cjs.js',
+          entryFileNames: '3d-view.cjs.js',
           inlineDynamicImports: true,
           exports: 'named',
         },
         {
           format: 'umd',
-          entryFileNames: 'js-cloudimage-3d-view.min.js',
+          entryFileNames: '3d-view.min.js',
           inlineDynamicImports: true,
           name: 'CI3DView',
           exports: 'named',

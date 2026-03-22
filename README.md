@@ -2,28 +2,28 @@
   <img src="https://scaleflex.cloudimg.io/v7/plugins/js-cloudimage-360-view/logo_scaleflex_on_white_bg.jpg?vh=91b12d&w=700" alt="Scaleflex" width="350">
 </p>
 
-<h1 align="center">js-cloudimage-3d-view</h1>
+<h1 align="center">@cloudimage/3d-view</h1>
 
 <p align="center">
   Interactive 3D model viewer with orbit controls, lighting, animations, and accessibility. Powered by Three.js.
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/js-cloudimage-3d-view"><img src="https://img.shields.io/npm/v/js-cloudimage-3d-view.svg?style=flat-square" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/js-cloudimage-3d-view"><img src="https://img.shields.io/npm/dm/js-cloudimage-3d-view.svg?style=flat-square" alt="npm downloads"></a>
-  <a href="https://github.com/scaleflex/js-cloudimage-3d-view/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/js-cloudimage-3d-view.svg?style=flat-square" alt="license"></a>
-  <a href="https://bundlephobia.com/package/js-cloudimage-3d-view"><img src="https://img.shields.io/bundlephobia/minzip/js-cloudimage-3d-view?style=flat-square" alt="bundle size"></a>
+  <a href="https://www.npmjs.com/package/@cloudimage/3d-view"><img src="https://img.shields.io/npm/v/@cloudimage/3d-view.svg?style=flat-square" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@cloudimage/3d-view"><img src="https://img.shields.io/npm/dm/@cloudimage/3d-view.svg?style=flat-square" alt="npm downloads"></a>
+  <a href="https://github.com/scaleflex/cloudimage-3d-view/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@cloudimage/3d-view.svg?style=flat-square" alt="license"></a>
+  <a href="https://bundlephobia.com/package/@cloudimage/3d-view"><img src="https://img.shields.io/bundlephobia/minzip/@cloudimage/3d-view?style=flat-square" alt="bundle size"></a>
 </p>
 
 <p align="center">
-  <a href="https://scaleflex.github.io/js-cloudimage-3d-view/">Live Demo</a> ·
-  <a href="https://codesandbox.io/p/devbox/github/scaleflex/js-cloudimage-3d-view/tree/main/examples/vanilla">Vanilla Sandbox</a> ·
-  <a href="https://codesandbox.io/p/devbox/github/scaleflex/js-cloudimage-3d-view/tree/main/examples/react">React Sandbox</a>
+  <a href="https://scaleflex.github.io/cloudimage-3d-view/">Live Demo</a> ·
+  <a href="https://codesandbox.io/p/devbox/github/scaleflex/cloudimage-3d-view/tree/main/examples/vanilla">Vanilla Sandbox</a> ·
+  <a href="https://codesandbox.io/p/devbox/github/scaleflex/cloudimage-3d-view/tree/main/examples/react">React Sandbox</a>
 </p>
 
 ---
 
-## Why js-cloudimage-3d-view?
+## Why @cloudimage/3d-view?
 
 Embedding 3D models on the web shouldn't require writing Three.js boilerplate. This library handles all the heavy lifting:
 
@@ -61,14 +61,14 @@ Embedding 3D models on the web shouldn't require writing Three.js boilerplate. T
 ## Installation
 
 ```bash
-npm install js-cloudimage-3d-view three
+npm install @cloudimage/3d-view three
 ```
 
 ### CDN
 
 ```html
 <script src="https://unpkg.com/three/build/three.min.js"></script>
-<script src="https://scaleflex.cloudimg.io/v7/plugins/js-cloudimage-3d-view/1.2.0/js-cloudimage-3d-view.min.js?vh=dd042c&func=proxy"></script>
+<script src="https://scaleflex.cloudimg.io/v7/plugins/cloudimage/3d-view/1.2.0/3d-view.min.js?vh=b234c0&func=proxy"></script>
 ```
 
 ## Quick Start
@@ -76,7 +76,7 @@ npm install js-cloudimage-3d-view three
 ### JavaScript API
 
 ```js
-import CI3DView from 'js-cloudimage-3d-view';
+import CI3DView from '@cloudimage/3d-view';
 
 const viewer = new CI3DView('#my-container', {
   src: 'https://example.com/model.glb',
@@ -232,7 +232,7 @@ CI3DView.autoInit(root?: HTMLElement): CI3DViewInstance[]
 ## React Usage
 
 ```tsx
-import { CI3DViewer, useCI3DView } from 'js-cloudimage-3d-view/react';
+import { CI3DViewer, useCI3DView } from '@cloudimage/3d-view/react';
 
 // Component
 function ModelViewer() {

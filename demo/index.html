@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>js-cloudimage-3d-view — Interactive 3D Model Viewer</title>
+  <title>@cloudimage/3d-view — Interactive 3D Model Viewer</title>
   <meta name="description" content="A Three.js-powered TypeScript library for interactive 3D model viewers with orbit controls, lighting, environment maps, shadows, animation playback, and WCAG 2.1 AA accessibility." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
         <a href="#animation">Animation</a>
         <a href="#configurator">Configurator</a>
       </div>
-      <a href="https://github.com/scaleflex/js-cloudimage-3d-view" class="demo-nav-github" target="_blank" rel="noopener" aria-label="GitHub">
+      <a href="https://github.com/scaleflex/cloudimage-3d-view" class="demo-nav-github" target="_blank" rel="noopener" aria-label="GitHub">
         <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       </a>
       <button class="demo-nav-burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -38,7 +38,7 @@
   <!-- Hero -->
   <section id="hero" class="demo-hero">
     <div class="demo-hero-inner">
-      <div class="demo-hero-badge">js-cloudimage-3d-view</div>
+      <div class="demo-hero-badge">@cloudimage/3d-view</div>
       <h1>Interactive <span class="demo-gradient-text">3D Viewer</span></h1>
       <p class="demo-subtitle">A lightweight Three.js-powered TypeScript library for embedding interactive 3D models with orbit controls, HDR lighting, shadows, animation playback, and full accessibility.</p>
       <div class="demo-hero-actions">
@@ -46,7 +46,7 @@
           Get Started
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="https://github.com/scaleflex/js-cloudimage-3d-view" class="demo-btn demo-btn--glass" target="_blank" rel="noopener">
+        <a href="https://github.com/scaleflex/cloudimage-3d-view" class="demo-btn demo-btn--glass" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
         </a>
@@ -85,11 +85,11 @@
         <p>Install from npm or load from CDN &mdash; choose the method that fits your workflow.</p>
         <div class="demo-hero-sandboxes">
           <span class="demo-hero-sandboxes-label">Try it live</span>
-          <a href="https://codesandbox.io/p/devbox/github/scaleflex/js-cloudimage-3d-view/tree/main/examples/vanilla" class="demo-btn demo-btn--chip" target="_blank" rel="noopener">
+          <a href="https://codesandbox.io/p/devbox/github/scaleflex/cloudimage-3d-view/tree/main/examples/vanilla" class="demo-btn demo-btn--chip" target="_blank" rel="noopener">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             Vanilla
           </a>
-          <a href="https://codesandbox.io/p/devbox/github/scaleflex/js-cloudimage-3d-view/tree/main/examples/react" class="demo-btn demo-btn--chip" target="_blank" rel="noopener">
+          <a href="https://codesandbox.io/p/devbox/github/scaleflex/cloudimage-3d-view/tree/main/examples/react" class="demo-btn demo-btn--chip" target="_blank" rel="noopener">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2.2"/><ellipse cx="12" cy="12" rx="11" ry="4.2" fill="none" stroke="currentColor" stroke-width="1.5"/><ellipse cx="12" cy="12" rx="11" ry="4.2" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="11" ry="4.2" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(120 12 12)"/></svg>
             React
           </a>
@@ -104,14 +104,14 @@
             <div class="demo-feature-title">Install via npm</div>
           </div>
           <div class="demo-code-wrap">
-            <pre><code class="language-bash">npm install js-cloudimage-3d-view three</code></pre>
+            <pre><code class="language-bash">npm install @cloudimage/3d-view three</code></pre>
             <button class="demo-copy-btn" aria-label="Copy to clipboard">
               <svg class="demo-copy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
               <svg class="demo-check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </button>
           </div>
           <div class="demo-code-wrap demo-code-wrap--fill">
-            <pre><code class="language-javascript">import { CI3DView } from 'js-cloudimage-3d-view';
+            <pre><code class="language-javascript">import { CI3DView } from '@cloudimage/3d-view';
 
 const viewer = new CI3DView('#my-container', {
   src: 'model.glb',
@@ -133,7 +133,7 @@ const viewer = new CI3DView('#my-container', {
           </div>
           <div class="demo-code-wrap demo-code-wrap--fill">
             <pre><code class="language-html">&lt;script src="https://unpkg.com/three/build/three.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://scaleflex.cloudimg.io/v7/plugins/js-cloudimage-3d-view/1.2.0/js-cloudimage-3d-view.min.js?vh=dd042c&amp;func=proxy"&gt;&lt;/script&gt;
+&lt;script src="https://scaleflex.cloudimg.io/v7/plugins/cloudimage/3d-view/1.2.0/3d-view.min.js?vh=b234c0&amp;func=proxy"&gt;&lt;/script&gt;
 
 &lt;div id="viewer"
   data-ci-3d-src="model.glb"
@@ -566,14 +566,14 @@ const viewer = new CI3DView('#my-container', {
       </div>
       <div class="demo-footer-col">
         <h4>Resources</h4>
-        <a href="https://github.com/scaleflex/js-cloudimage-3d-view" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.npmjs.com/package/js-cloudimage-3d-view" target="_blank" rel="noopener">npm</a>
-        <a href="https://github.com/scaleflex/js-cloudimage-3d-view/blob/main/README.md" target="_blank" rel="noopener">Documentation</a>
+        <a href="https://github.com/scaleflex/cloudimage-3d-view" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.npmjs.com/package/@cloudimage/3d-view" target="_blank" rel="noopener">npm</a>
+        <a href="https://github.com/scaleflex/cloudimage-3d-view/blob/main/README.md" target="_blank" rel="noopener">Documentation</a>
       </div>
       <div class="demo-footer-col">
         <h4>Examples</h4>
-        <a href="https://codesandbox.io/p/devbox/github/scaleflex/js-cloudimage-3d-view/tree/main/examples/vanilla" target="_blank" rel="noopener">Vanilla Sandbox</a>
-        <a href="https://codesandbox.io/p/devbox/github/scaleflex/js-cloudimage-3d-view/tree/main/examples/react" target="_blank" rel="noopener">React Sandbox</a>
+        <a href="https://codesandbox.io/p/devbox/github/scaleflex/cloudimage-3d-view/tree/main/examples/vanilla" target="_blank" rel="noopener">Vanilla Sandbox</a>
+        <a href="https://codesandbox.io/p/devbox/github/scaleflex/cloudimage-3d-view/tree/main/examples/react" target="_blank" rel="noopener">React Sandbox</a>
       </div>
       <div class="demo-footer-col">
         <h4>Support</h4>
@@ -586,7 +586,7 @@ const viewer = new CI3DView('#my-container', {
           </span>
           Buy Me a Coffee
         </a>
-        <a href="https://github.com/scaleflex/js-cloudimage-3d-view/issues" target="_blank" rel="noopener">Report an Issue</a>
+        <a href="https://github.com/scaleflex/cloudimage-3d-view/issues" target="_blank" rel="noopener">Report an Issue</a>
         <a href="mailto:hello@cloudimage.io">Contact Us</a>
       </div>
     </div>

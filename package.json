@@ -1,6 +1,6 @@
 {
   "name": "@cloudimage/3d-view",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Interactive 3D model viewer with orbit controls, lighting, and accessibility",
   "license": "MIT",
   "author": "Scaleflex",
@@ -36,7 +36,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint src/ tests/ --ext .ts,.tsx",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "release": "node scripts/release-cdn.mjs plugin"
   },
   "peerDependencies": {
     "react": ">=17.0.0",

@@ -409,7 +409,7 @@ All configuration is expressed via `data-ci-3d-*` attributes on the container el
 
 ```html
 <script src="https://unpkg.com/three@0.170.0/build/three.min.js"></script>
-<script src="https://scaleflex.cloudimg.io/v7/plugins/cloudimage/3d-view/1.2.0/3d-view.min.js?vh=b234c0&func=proxy"></script>
+<script src="https://cdn.cloudimage.io/3d-view/1.2.1/3d-view.min.js"></script>
 <script>CI3DView.autoInit();</script>
 ```
 
@@ -1248,7 +1248,7 @@ For CDN consumers, both Three.js and the library must be loaded:
 <script src="https://unpkg.com/three@0.170.0/build/three.min.js"></script>
 
 <!-- @cloudimage/3d-view -->
-<script src="https://scaleflex.cloudimg.io/v7/plugins/cloudimage/3d-view/1.2.0/3d-view.min.js?vh=b234c0&func=proxy"></script>
+<script src="https://cdn.cloudimage.io/3d-view/1.2.1/3d-view.min.js"></script>
 ```
 
 The UMD build references `three` as an external global (`window.THREE`). When loaded via `<script>` tags in the correct order, `window.CI3DView` is available for initialization.

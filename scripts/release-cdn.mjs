@@ -20,5 +20,5 @@ run({
       },
     },
   },
-  updateFiles: ["README.md"],
+  updateFiles: ["README.md", "docs/SPECS.md", "demo/index.html"],
 });

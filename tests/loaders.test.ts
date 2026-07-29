@@ -281,6 +281,54 @@ describe('IFCFormatLoader', () => {
     expect(result.animations).toHaveLength(0);
   });
 
+  // web-ifc concatenates the wasm path onto the script directory unless the second argument marks
+  // the path as absolute, so an absolute path without that flag makes the .wasm request 404.
+  it.each([
+    ['https://unpkg.com/web-ifc@0.0.75/', true],
+    ['//cdn.example.com/web-ifc/', true],
+    ['/web-ifc/', true],
+    ['file:///opt/wasm/', true],
+    ['blob:https://example.com/2f1b-4c3a/', true],
+    ['chrome-extension://abcdefghijklmnop/wasm/', true],
+    ['web-ifc/', false],
+    ['./web-ifc/', false],
+    ['../wasm/', false],
+  ])('marks the wasm path %s as absolute=%s', async (ifcWasmPath, absolute) => {
+    const { IfcAPI } = await import('web-ifc');
+    const mockedCtor = vi.mocked(IfcAPI);
+    const callsBefore = mockedCtor.mock.results.length;
+
+    const loader = (await getLoader('building.ifc'))!;
+    await loader.load('building.ifc', { ifcWasmPath });
+
+    const instance = mockedCtor.mock.results[callsBefore].value;
+    expect(instance.SetWasmPath).toHaveBeenCalledWith(ifcWasmPath, absolute);
+  });
+
+  it.each([[undefined], ['']])('falls back to the default wasm path for %o', async (ifcWasmPath) => {
+    const { IfcAPI } = await import('web-ifc');
+    const mockedCtor = vi.mocked(IfcAPI);
+    const callsBefore = mockedCtor.mock.results.length;
+
+    const loader = (await getLoader('building.ifc'))!;
+    await loader.load('building.ifc', { ifcWasmPath });
+
+    const instance = mockedCtor.mock.results[callsBefore].value;
+    expect(instance.SetWasmPath).toHaveBeenCalledWith('https://unpkg.com/web-ifc@0.0.75/', true);
+  });
+
+  it('defaults to the unpkg path flagged as absolute', async () => {
+    const { IfcAPI } = await import('web-ifc');
+    const mockedCtor = vi.mocked(IfcAPI);
+    const callsBefore = mockedCtor.mock.results.length;
+
+    const loader = (await getLoader('building.ifc'))!;
+    await loader.load('building.ifc', {});
+
+    const instance = mockedCtor.mock.results[callsBefore].value;
+    expect(instance.SetWasmPath).toHaveBeenCalledWith('https://unpkg.com/web-ifc@0.0.75/', true);
+  });
+
   it('calls CloseModel to free WASM memory', async () => {
     const { IfcAPI } = await import('web-ifc');
     const mockedCtor = vi.mocked(IfcAPI);

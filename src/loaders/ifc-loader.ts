@@ -13,6 +13,16 @@ import type { FlatMesh } from 'web-ifc';
 
 const DEFAULT_WASM_PATH = 'https://unpkg.com/web-ifc@0.0.75/';
 
+/**
+ * web-ifc appends the wasm path to the directory of the running script unless told the path is
+ * absolute. Without the flag a full URL or a root-relative path is concatenated onto the bundle
+ * location (e.g. `/assets/https://unpkg.com/web-ifc@0.0.75/web-ifc.wasm`) and the request 404s.
+ * Any scheme counts as absolute (http:, file:, blob:, chrome-extension:), as do protocol-relative
+ * (`//host/`) and root-relative (`/path/`) paths.
+ */
+const isAbsoluteWasmPath = (path: string): boolean =>
+  /^[a-z][a-z0-9+.-]*:/i.test(path) || path.startsWith('//') || path.startsWith('/');
+
 export class IFCFormatLoader implements FormatLoader {
   extensions = ['.ifc'];
 
@@ -24,7 +34,8 @@ export class IFCFormatLoader implements FormatLoader {
     const { IfcAPI } = await import(/* webpackIgnore: true */ 'web-ifc');
 
     const ifcApi = new IfcAPI();
-    ifcApi.SetWasmPath(options.ifcWasmPath || DEFAULT_WASM_PATH);
+    const wasmPath = options.ifcWasmPath || DEFAULT_WASM_PATH;
+    ifcApi.SetWasmPath(wasmPath, isAbsoluteWasmPath(wasmPath));
     await ifcApi.Init();
 
     // Fetch the IFC file as ArrayBuffer

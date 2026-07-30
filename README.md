@@ -115,6 +115,31 @@ const viewer = new CI3DView('#my-container', {
 | FBX | `.fbx` | Supports skeletal animations |
 | 3DS | `.3ds` | Legacy Autodesk format |
 | AMF | `.amf` | Additive manufacturing format |
+| IFC | `.ifc` | BIM format. Requires the `web-ifc` peer dependency — see below |
+
+### IFC and the WASM decoder
+
+`.ifc` files are parsed by [`web-ifc`](https://github.com/ThatOpen/engine_web-ifc), a WASM module that
+loads its own `web-ifc.wasm` binary at runtime. Install it alongside the viewer:
+
+```bash
+npm i web-ifc@0.0.75
+```
+
+By default the binary is fetched from `https://unpkg.com/web-ifc@0.0.75/`. The JavaScript glue code
+comes from your installed copy, so **both versions must match** — a different `web-ifc` release will
+fail during initialisation. If you install another version, or want to self-host the binary, point
+`ifcWasmPath` at the matching files:
+
+```js
+new CI3DView('#viewer', {
+  src: 'model.ifc',
+  ifcWasmPath: '/assets/web-ifc/',   // must contain web-ifc.wasm
+});
+```
+
+Absolute URLs, protocol-relative (`//host/path/`) and root-relative (`/path/`) paths are all
+resolved as-is; anything else is treated as relative to the directory of the running script.
 
 ## API Reference
 
@@ -164,6 +189,7 @@ new CI3DView(element: HTMLElement | string, config: CI3DViewConfig)
 | `toneMappingExposure` | `number` | `1.0` | Tone mapping exposure |
 | `draco` | `boolean` | `true` | Enable DRACO decoder for GLTF |
 | `dracoDecoderPath` | `string` | — | Custom DRACO decoder path |
+| `ifcWasmPath` | `string` | unpkg CDN | Directory holding `web-ifc.wasm` (for IFC models) |
 | `animation` | `number \| string` | — | Animation index or name to play on load |
 | `autoPlayAnimation` | `boolean` | `false` | Auto-play first animation on load |
 | `animationSpeed` | `number` | `1.0` | Animation playback speed |

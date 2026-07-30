@@ -43,7 +43,7 @@
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0",
     "three": ">=0.150.0",
-    "web-ifc": ">=0.0.66"
+    "web-ifc": ">=0.0.75"
   },
   "peerDependenciesMeta": {
     "react": {

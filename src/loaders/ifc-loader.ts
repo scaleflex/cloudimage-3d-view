@@ -11,6 +11,8 @@ import {
 import type { FormatLoader, LoadResult, LoaderOptions } from '../core/types';
 import type { FlatMesh } from 'web-ifc';
 
+// The wasm binary and the JS glue from the installed web-ifc must be the same release, so this
+// version has to stay in sync with the `web-ifc` peer dependency range in package.json.
 const DEFAULT_WASM_PATH = 'https://unpkg.com/web-ifc@0.0.75/';
 
 /**

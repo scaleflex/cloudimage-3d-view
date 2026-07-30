@@ -1,5 +1,4 @@
 dist/*
-!dist/3d-view.min.js
 dist-demo/
 node_modules/
 coverage/

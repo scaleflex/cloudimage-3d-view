@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.2] - 2026-07-31
+
+### Fixed
+- IFC loading with an absolute `ifcWasmPath`: the path is now marked absolute so
+  web-ifc resolves the `.wasm` URL instead of prefixing its own base path
+
+### Changed
+- Auto-rotate control now uses the Lucide Orbit icon
+- Documented `ifcWasmPath` and aligned the `web-ifc` peer dependency range
+- Demo: replaced the "Also by" carousel with a plugins catalog and shared footer,
+  with corrected Cloudimage plugin display names
+- Docs and demo now point at `cdn.cloudimage.io`
+- The built UMD bundle is no longer tracked in git
+
 ## [1.2.0] - 2026-03-06
 
 ### Added

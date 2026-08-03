@@ -27,7 +27,8 @@
   "scripts": {
     "dev": "vite --config config/vite.demo.config.ts",
     "dev:react": "vite --config config/vite.react-demo.config.ts",
-    "build": "npm run build:bundle && npm run build:react",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && npm run build:bundle && npm run build:react",
     "build:bundle": "vite build --config config/vite.config.ts",
     "build:react": "vite build --config config/vite.react.config.ts",
     "build:demo": "vite build --config config/vite.demo.config.ts",
@@ -94,7 +95,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/scaleflex/cloudimage-3d-view.git"
+    "url": "git+https://github.com/scaleflex/cloudimage-3d-view.git"
   },
   "bugs": {
     "url": "https://github.com/scaleflex/cloudimage-3d-view/issues"
